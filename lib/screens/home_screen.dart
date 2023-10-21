@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mech_client/screens/chat_screen.dart';
 import 'package:mech_client/screens/login_screen.dart';
 import 'package:mech_client/screens/user_account_screen.dart';
 import 'package:mech_client/screens/vehicle_screen.dart';
@@ -53,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
         leading: IconButton(
           icon: const Icon(Icons.sms_outlined),
           onPressed: () {
-            // Ação ao pressionar o ícone à esquerda (menu, por exemplo)
-            print('Ícone à esquerda pressionado');
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => chat()));
           },
         ),
         actions: <Widget>[
