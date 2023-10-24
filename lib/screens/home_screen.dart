@@ -38,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var bottomNavigationBar;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -51,13 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
         iconTheme: const IconThemeData(
           color: Colors.black, // Cor dos ícones na AppBar
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.sms_outlined),
-          onPressed: () {
-            // Ação ao pressionar o ícone à esquerda (menu, por exemplo)
-            print('Ícone à esquerda pressionado');
-          },
-        ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.where_to_vote_outlined),
@@ -68,6 +62,62 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: <Widget>[
+            Center(
+              child: UserAccountsDrawerHeader(
+                accountName: Text("Nome: Simas"),
+                accountEmail: Text("Email simas@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Color(0xFFFF5C00),
+                  child: Icon(
+                    Icons.account_circle_outlined,
+                    size: 50,
+                    color: Colors.white,
+                  ),
+                ),
+                decoration: BoxDecoration(
+                  color: Color(0xFFFF5C00),
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('Veículos'),
+              leading: Icon(Icons.directions_car_outlined),
+              onTap: () {
+                const VehiclePage();
+              },
+            ),
+            ListTile(
+              title: Text('Conserto'),
+              leading: Icon(Icons.toll_outlined),
+              onTap: () {
+                const RepairPage();
+              },
+            ),
+            ListTile(
+                title: Text('Conta'),
+                leading: Icon(Icons.account_circle_outlined),
+                onTap: () {
+                  const UserAccount();
+                }),
+            Expanded(
+              child:
+                  SizedBox(), // Espaço em branco para preencher o espaço restante
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('Sair'),
+              onTap: () {
+                // Chama a função signOut() quando o ListTile "Sair" é clicado
+                singOut();
+              },
+            ),
+          ],
+        ),
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
