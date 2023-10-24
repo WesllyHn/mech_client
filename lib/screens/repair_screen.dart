@@ -49,7 +49,7 @@ class _RegisterRepairState extends State<RegisterRepair> {
               const Column(
                 children: [
                   Icon(
-                    Icons.car_repair,
+                    Icons.build,
                     size: 50,
                   ),
                   SizedBox(
@@ -119,7 +119,7 @@ class _RegisterRepairState extends State<RegisterRepair> {
                           null, // ou um número grande, por exemplo, maxLines: 10,
                       decoration: const InputDecoration(
                         labelText: "Problema Relatado",
-                      enabled: false,
+                        enabled: false,
                       ),
                     ),
                   ],
@@ -129,7 +129,8 @@ class _RegisterRepairState extends State<RegisterRepair> {
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => RegisterRepairPage()),
+                    MaterialPageRoute(
+                        builder: (context) => RegisterRepairPage()),
                   );
                   // Coloque a ação que você deseja realizar ao tocar no card aqui
                 },
