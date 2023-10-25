@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mech_client/models/account_user.dart';
 import 'package:mech_client/screens/custom_drawer.dart';
 import 'package:mech_client/screens/login_screen.dart';
+import 'package:mech_client/screens/register_repair_screen.dart';
 import 'package:mech_client/screens/repair_screen.dart';
 import 'package:mech_client/screens/user_account_screen.dart';
 import 'package:mech_client/screens/vehicle_screen.dart';
@@ -144,7 +145,7 @@ class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: RepairPage(),
+      home: RegisterRepairPage(),
     );
   }
 }

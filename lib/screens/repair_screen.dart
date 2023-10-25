@@ -129,13 +129,13 @@ class _RegisterRepairState extends State<RegisterRepair> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                        builder: (context) => RegisterRepairPage()),
+                        builder: (context) => const RegisterRepairPage()),
                   );
                   // Coloque a ação que você deseja realizar ao tocar no card aqui
                 },
                 child: Container(
                   padding: const EdgeInsets.only(
-                      left: 120, right: 120, top: 5, bottom: 20),
+                      left: 15, right: 30, top: 5, bottom: 20),
                   margin: const EdgeInsets.only(
                       left: 20, right: 20, top: 20, bottom: 10),
                   decoration: BoxDecoration(
@@ -143,11 +143,10 @@ class _RegisterRepairState extends State<RegisterRepair> {
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: const [
                       BoxShadow(
-                        spreadRadius: 1,
-                        color: Colors.grey,
-                        blurRadius: 10,
-                        offset: Offset(3, 1),
-                      ),
+                          spreadRadius: 1,
+                          color: Colors.grey,
+                          blurRadius: 10,
+                          offset: Offset(3, 1)),
                     ],
                   ),
                   child: const Column(
